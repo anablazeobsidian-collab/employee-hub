@@ -1,0 +1,168 @@
+import { Employee, EmployeeStatus } from '../models/employee.model';
+
+const TODAY = new Date();
+function daysAgo(n: number): string {
+  const d = new Date(TODAY);
+  d.setDate(d.getDate() - n);
+  return d.toISOString().slice(0, 10);
+}
+
+export const SEED_EMPLOYEES: Employee[] = [
+  {
+    id: 'EMP-1001',
+    firstName: 'Avery',
+    lastName: 'Carter',
+    email: 'avery.carter@company.com',
+    department: 'Engineering',
+    position: 'Staff Engineer',
+    status: 'Active',
+    joinDate: daysAgo(420),
+    salary: 138000,
+  },
+  {
+    id: 'EMP-1002',
+    firstName: 'Liam',
+    lastName: 'Nguyen',
+    email: 'liam.nguyen@tech.com',
+    department: 'Product',
+    position: 'Senior Product Manager',
+    status: 'Active',
+    joinDate: daysAgo(310),
+    salary: 124500,
+  },
+  {
+    id: 'EMP-1003',
+    firstName: 'Sofia',
+    lastName: 'Martinez',
+    email: 'sofia.martinez@org.com',
+    department: 'Design',
+    position: 'Design Lead',
+    status: 'On Leave',
+    joinDate: daysAgo(720),
+    salary: 119000,
+  },
+  {
+    id: 'EMP-1004',
+    firstName: 'Ethan',
+    lastName: 'Patel',
+    email: 'ethan.patel@solutions.com',
+    department: 'Sales',
+    position: 'Account Executive',
+    status: 'Active',
+    joinDate: daysAgo(95),
+    salary: 92000,
+  },
+  {
+    id: 'EMP-1005',
+    firstName: 'Mia',
+    lastName: 'Johnson',
+    email: 'mia.johnson@firm.com',
+    department: 'Marketing',
+    position: 'Content Strategist',
+    status: 'Active',
+    joinDate: daysAgo(180),
+    salary: 86500,
+  },
+  {
+    id: 'EMP-1006',
+    firstName: 'Noah',
+    lastName: 'Williams',
+    email: 'noah.williams@corp.com',
+    department: 'Finance',
+    position: 'Financial Analyst',
+    status: 'Terminated',
+    joinDate: daysAgo(540),
+    salary: 101000,
+  },
+  {
+    id: 'EMP-1007',
+    firstName: 'Isabella',
+    lastName: 'Rossi',
+    email: 'isabella.rossi@group.com',
+    department: 'Human Resources',
+    position: 'HR Business Partner',
+    status: 'Active',
+    joinDate: daysAgo(260),
+    salary: 98000,
+  },
+  {
+    id: 'EMP-1008',
+    firstName: 'James',
+    lastName: 'Kim',
+    email: 'james.kim@enterprise.com',
+    department: 'Engineering',
+    position: 'Engineering Manager',
+    status: 'Active',
+    joinDate: daysAgo(615),
+    salary: 162000,
+  },
+  {
+    id: 'EMP-1009',
+    firstName: 'Olivia',
+    lastName: 'Brown',
+    email: 'olivia.brown@ventures.com',
+    department: 'Operations',
+    position: 'Operations Manager',
+    status: 'On Leave',
+    joinDate: daysAgo(390),
+    salary: 110000,
+  },
+  {
+    id: 'EMP-1010',
+    firstName: 'Lucas',
+    lastName: 'Garcia',
+    email: 'lucas.garcia@partners.com',
+    department: 'Customer Success',
+    position: 'CSM Lead',
+    status: 'Active',
+    joinDate: daysAgo(140),
+    salary: 94000,
+  },
+  {
+    id: 'EMP-1011',
+    firstName: 'Amelia',
+    lastName: 'Thompson',
+    email: 'amelia.thompson@company.com',
+    department: 'Legal',
+    position: 'Corporate Counsel',
+    status: 'Active',
+    joinDate: daysAgo(210),
+    salary: 145000,
+  },
+  {
+    id: 'EMP-1012',
+    firstName: 'Benjamin',
+    lastName: 'Lee',
+    email: 'benjamin.lee@tech.com',
+    department: 'Engineering',
+    position: 'Frontend Engineer',
+    status: 'Active',
+    joinDate: daysAgo(60),
+    salary: 118000,
+  },
+];
+
+export const DEPARTMENT_COLORS: Record<string, string> = {
+  Engineering: 'bg-brand-500',
+  Product: 'bg-emerald-500',
+  Design: 'bg-fuchsia-500',
+  Marketing: 'bg-amber-500',
+  Sales: 'bg-sky-500',
+  Finance: 'bg-teal-500',
+  'Human Resources': 'bg-rose-500',
+  Operations: 'bg-indigo-500',
+  'Customer Success': 'bg-violet-500',
+  Legal: 'bg-cyan-600',
+};
+
+export const STATUS_STYLES: Record<EmployeeStatus, string> = {
+  Active: 'bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200',
+  'On Leave': 'bg-amber-50 text-amber-700 ring-1 ring-amber-200',
+  Terminated: 'bg-rose-50 text-rose-700 ring-1 ring-rose-200',
+};
+
+export const STATUS_DOT: Record<EmployeeStatus, string> = {
+  Active: 'bg-emerald-500',
+  'On Leave': 'bg-amber-500',
+  Terminated: 'bg-rose-500',
+};
